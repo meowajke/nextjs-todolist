@@ -1,36 +1,33 @@
-import * as React from "react";
-import withRedux from "next-redux-wrapper";
+import React from "react";
 import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
 import App from "next/app";
+import { createWrapper } from "next-redux-wrapper";
+import { PersistGate } from "redux-persist/integration/react";
 
-import makeStore from "./store";
-const store = makeStore({ todoList: [], counter: 0 });
+import reduxStore from "./store";
+
+import Main from "./containters/Main";
+
+const store = reduxStore();
 
 class ToDoList extends App {
-  public static async getInitialProps({ Component, ctx }) {
-    const pageProps =
-      Component && Component.getInitialProps
-        ? await Component.getInitialProps(ctx)
-        : {};
+  static async getInitialProps({ Component, ctx }) {
+    const pageProps = Component ? await Component.getInitialProps(ctx) : {};
 
-    return { pageProps: {} };
+    console.log(pageProps);
+    return { pageProps };
   }
 
-  public render() {
-    const { Component, pageProps } = this.props;
-
+  render() {
     return (
       <Provider store={store}>
-        <PersistGate
-          persistor={store["__PERSISTOR"]}
-          loading={<span>loading...</span>}
-        >
-          <Component {...pageProps} />
+        <PersistGate persistor={store.__PERSISTOR} loading={null}>
+          <Main />
         </PersistGate>
       </Provider>
     );
   }
 }
 
-export default withRedux(makeStore)(ToDoList);
+const wrapper = createWrapper(reduxStore, { debug: true });
+export default wrapper.withRedux(ToDoList);
