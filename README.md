@@ -1,7 +1,7 @@
 NextJS, React, Redux, Persist, TypeScript
 
-Install:
-npm i
+### Install:
+npm install
 
-Run:
+### Run:
 npm run dev
