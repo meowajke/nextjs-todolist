@@ -1,1 +1,10 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+NextJS, React, Redux, Persist, TypeScript
+
+### Install:
+npm install
+
+### Run:
+npm run dev
+
+### Access:
+http://localhost:3000
