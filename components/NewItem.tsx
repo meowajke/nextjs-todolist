@@ -1,9 +1,9 @@
-import React from "react";
-import AddCircle from "@material-ui/icons/AddCircle";
+import React from 'react';
+import AddCircle from '@material-ui/icons/AddCircle';
 
 /** Styled Components */
-import styled from "styled-components";
-import { Button } from "./styled/Button";
+import styled from 'styled-components';
+import { Button } from './styled/Button';
 
 const ListItem = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ export class NewItem extends React.Component<_INewItemProps, _INewItemState> {
     this.click = this.click.bind(this);
 
     this.state = {
-      text: "",
+      text: '',
     };
   }
 
@@ -60,6 +60,6 @@ export class NewItem extends React.Component<_INewItemProps, _INewItemState> {
 
   private click() {
     this.props.click(this.state.text);
-    this.setState({ text: "" });
+    this.setState({ text: '' });
   }
 }

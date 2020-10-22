@@ -1,13 +1,17 @@
-import * as Action from "../constants";
+import * as Main from '../constants/Main';
 
-function Reducer(state, action) {
+const initialState = {
+  todoList: [],
+};
+
+export default function MainReducer(state = initialState, action) {
   let nextState;
-
   switch (action.type) {
-    case Action.None:
+    case Main.None:
+      nextState = { ...state };
       break;
 
-    case Action.AddItem:
+    case Main.AddItem:
       nextState = {
         ...state,
         todoList: [
@@ -20,14 +24,14 @@ function Reducer(state, action) {
       };
       break;
 
-    case Action.DeleteItem:
+    case Main.DeleteItem:
       nextState = {
         ...state,
         todoList: state.todoList.filter((item, i) => i !== action.payload),
       };
       break;
 
-    case Action.CompleteItem:
+    case Main.CompleteItem:
       nextState = {
         ...state,
         todoList: state.todoList.map((item, i) =>
@@ -36,7 +40,7 @@ function Reducer(state, action) {
       };
       break;
 
-    case Action.RestoreItem:
+    case Main.RestoreItem:
       nextState = {
         ...state,
         todoList: state.todoList.map((item, i) =>
@@ -51,5 +55,3 @@ function Reducer(state, action) {
 
   return nextState;
 }
-
-export default Reducer;

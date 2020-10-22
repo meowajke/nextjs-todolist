@@ -1,23 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": false,
     "experimentalDecorators": true,
     "module": "esnext",
     "target": "es6",
     "jsx": "preserve",
-    "lib": [
-      "es6",
-      "dom",
-      "es2015",
-      "es2017"
-    ],
+    "lib": ["es6", "dom", "es2015", "es2017"],
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "types": [
-      "jest"
-    ],
+    "types": ["node"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -27,14 +19,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "exclude": [
-    ".vscode",
-    "dist",
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": [".vscode", "dist", "node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

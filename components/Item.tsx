@@ -1,21 +1,21 @@
-import React from "react";
-import Done from "@material-ui/icons/Done";
-import Restore from "@material-ui/icons/Restore";
-import Delete from "@material-ui/icons/Delete";
+import React from 'react';
+import Done from '@material-ui/icons/Done';
+import Restore from '@material-ui/icons/Restore';
+import Delete from '@material-ui/icons/Delete';
 
 /** Styled Components */
-import styled from "styled-components";
-import { Button } from "./styled/Button";
+import styled from 'styled-components';
+import { Button } from './styled/Button';
 
 const ListItem = styled.div`
   display: flex;
   align-items: center;
   padding: 6px 0;
-  ${(props) =>
+  ${props =>
     props.accomplished
       ? `text-decoration: line-through;
       color: #929292;`
-      : ""}
+      : ''}
 `;
 const Text = styled.span`
   flex: 1 0 auto;

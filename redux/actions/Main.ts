@@ -1,4 +1,4 @@
-import * as Action from "../constants";
+import * as Action from '../constants/Main';
 
 export function AddItem(text: string) {
   return {
